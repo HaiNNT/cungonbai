@@ -1,0 +1,94 @@
+
+
+.login {
+	margin-bottom: 20px;
+	background-color: #ffffff;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+	padding-right: 0px;
+	padding-left: 0px;
+	margin-top: 50px;
+}
+
+.login button {
+	width: 100px;
+}
+
+.login-body {
+	padding: 15px;
+}
+
+.login-body:before,
+.login-body:after {
+	display: table;
+	content: " ";
+}
+
+.login-body:after {
+	clear: both;
+}
+
+.login-body:before,
+.login-body:after {
+	display: table;
+	content: " ";
+}
+
+.login-body:after {
+	clear: both;
+}
+
+.login-heading {
+  padding: 13px 20px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  /*text-align: center;*/
+}
+
+.login-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+
+.login-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 25px;
+  color: inherit;
+}
+
+.login-title > a {
+  color: inherit;
+}
+
+.login-warning {
+	border-color: #faebcc;
+}
+
+.login-warning > .login-heading {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+.login-warning > .login-heading + .login-collapse .login-body {
+	border-top-color: #faebcc;
+}
+
+.login-warning > .login-footer + .login-collapse .login-body {
+	border-bottom-color: #faebcc;
+}
+
+.login-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.invalid-mess {
+	color: red;
+}

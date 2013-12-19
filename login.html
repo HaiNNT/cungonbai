@@ -1,14 +1,101 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/mycss.css" />
 
 	<script type="text/javascript" href="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript">
+		function checkValidUsername(username){
+			var regex = new RegExp("^[-\\w\\.\\$@\\*\\!]{3,30}$");
+			return regex.test(username);
+		}
+		function checkValidPassword(password){
+			var regex = new RegExp("^[^<>,.;:'\"\\{\\}\\[\\]\\/\\\\()]{6,30}$");
+			return regex.test(password);
+		}
+
+		function checkValidLogin(){
+			var username = document.getElementById("username").value;
+			var password = document.getElementById("password").value;
+
+			if(!checkValidUsername(username)){
+				document.getElementById("invalid-username").classList.remove("hidden");
+				//$("#invalid-username").removeClass("hidden");
+				console.log("username");
+				return false;
+			}else{
+				if(!document.getElementById("invalid-username").classList.contains("hidden")){
+					document.getElementById("invalid-username").classList.add("hidden");
+				}
+			}
+
+			if(!checkValidPassword(password)){
+				document.getElementById("invalid-password").classList.remove("hidden");
+				document.getElementById("forgot-password").classList.remove("hidden");
+				//$("#invalid-password").removeClass("hidden");
+				console.log("password");
+				return false;
+			}else{
+				if(!document.getElementById("invalid-password").classList.contains("hidden")){
+					document.getElementById("invalid-password").classList.add("hidden");
+					document.getElementById("forgot-password").classList.add("hidden");
+				}
+			}
+
+			return true;
+		}		
+	</script>
 </head>
 <body>
 	<header></header>
 	<div class="container">
-		
+		<div class="row">
+			<div class=" login login-warning col-md-4 col-md-offset-4 col-xs-8 col-xs-offset-2">
+				<div class="login-heading">
+					<h3 class="login-title">Login</h3>
+				</div>
+				<div class="login-body">
+					<form class="form-horizontal" role="form" onsubmit="return checkValidLogin()">
+						<div class="form-group">
+							<label class="col-md-3 control-label">Username</label>
+							<div class="col-md-9">
+								<input type="text" class="form-control" id="username" placeholder="Username">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-4">
+								<p class="invalid-mess hidden" id="invalid-username">Invalid username!</p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-md-3 control-label">Password</label>
+							<div class="col-md-9">
+								<input type="password" class="form-control" id="password" placeholder="Password">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-4">
+								<p class="invalid-mess hidden" id="invalid-password">Invalid password!</p>
+								<a class="hidden" id="forgot-password" href="">Forgot your password?</a>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-offset-4 col-md-3">
+								<div class="checkbox">
+									<label>
+										<a href="">Register</a>
+									</label>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<button type="submit" class="btn btn-warning">Login</button>
+							</div>
+						</div>
+					</form>
+				</div>				
+			</div>
+		</div>	
 	</div>
 	<footer></footer>
 </body>
