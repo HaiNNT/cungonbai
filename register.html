@@ -29,7 +29,7 @@
   }
 
   function checkValidEmail(email){
-    var regex = new RegExp("^.{6,30}$");
+    var regex = new RegExp("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
     return regex.test(email);
   }
 
@@ -38,12 +38,18 @@
     return regex.test(fullname);
   }
 
+  function checkValidConfirm(confirm, password){
+    return confirm === password;
+  }
+
   function checkValidRegister(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    var confirm = document.getElementById("confirm").value;
     var fullname = document.getElementById("fullname").value;
     var email = document.getElementById("email").value;
     var check = document.getElementById("rule-check").checked;
+
     if(!check){
       document.getElementById("non-check-rule").classList.remove("hidden");
       return false;
@@ -71,6 +77,14 @@
       }
     }
 
+    if(!checkValidConfirm(confirm, password)){
+      document.getElementById("invalid-confirm").classList.remove("hidden");
+      return false;
+    }else{
+      if(!document.getElementById("invalid-confirm").classList.contains("hidden")){
+        document.getElementById("invalid-confirm").classList.add("hidden");
+      }
+    }
 
     if(!checkValidFullname(fullname)){
       document.getElementById("invalid-fullname").classList.remove("hidden");
@@ -232,40 +246,49 @@
         <form class="form-horizontal" role="form" onsubmit="return checkValidRegister()">
           <!-- <p class="invalid-mess text-center">Invalid information</p> -->
           <div class="form-group">
-            <label class="col-md-3 control-label">Tên Đăng Nhập</label>
-            <div class="col-md-9">
+            <label class="col-md-4 control-label">Tên Đăng Nhập</label>
+            <div class="col-md-8">
               <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập">
             </div>
           </div>
           <div class="col-md-offset-4">
-            <p class="invalid-mess hidden" id="invalid-username">Invalid username!</p>
+            <p class="invalid-mess hidden" id="invalid-username">Tên đăng nhập không hợp lệ!</p>
           </div>
           <div class="form-group">
-            <label class="col-md-3 control-label">Mật Khẩu</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="password" placeholder="Mật khẩu">
+            <label class="col-md-4 control-label">Mật Khẩu</label>
+            <div class="col-md-8">
+              <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
             </div>
           </div>
           <div class="col-md-offset-4">
-            <p class="invalid-mess hidden" id="invalid-password">Invalid password!</p>
+            <p class="invalid-mess hidden" id="invalid-password">Mật khẩu không hợp lệ!</p>
           </div>
           <div class="form-group">
-           <label class="col-md-3 control-label">Họ Tên</label>
-           <div class="col-md-9">
+            <label class="col-md-4 control-label">Nhập lại mật khẩu</label>
+            <div class="col-md-8">
+              <input type="password" class="form-control" id="confirm" placeholder="Nhập lại mật khẩu">
+            </div>
+          </div>
+          <div class="col-md-offset-4">
+            <p class="invalid-mess hidden" id="invalid-confirm">Nhập lại mật khẩu không đúng</p>
+          </div>
+          <div class="form-group">
+           <label class="col-md-4 control-label">Họ Tên</label>
+           <div class="col-md-8">
             <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
           </div>
         </div>
         <div class="col-md-offset-4">
-          <p class="invalid-mess hidden" id="invalid-fullname">Invalid fullname!</p>
+          <p class="invalid-mess hidden" id="invalid-fullname">Họ tên không hợp lệ!</p>
         </div>
         <div class="form-group">
-          <label class="col-md-3 control-label">Email</label>
-          <div class="col-md-9">
+          <label class="col-md-4 control-label">Email</label>
+          <div class="col-md-8">
             <input type="text" class="form-control" id="email" placeholder="Email">
           </div>
         </div>
         <div class="col-md-offset-4">
-          <p class="invalid-mess hidden" id="invalid-email">Invalid email!</p>
+          <p class="invalid-mess hidden" id="invalid-email">Email không hợp lệ</p>
         </div>
         <div class="form-group">
           <div class="col-md-offset-7 col-md-2">

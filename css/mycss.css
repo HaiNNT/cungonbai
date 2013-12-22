@@ -262,7 +262,7 @@ border-color: #FAA770;
 }
 
 .login {
-  margin-bottom: 142px;
+  margin-bottom: 148px;
   background-color: #ffffff;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -355,7 +355,7 @@ border-color: #FAA770;
 }
 
 .footer {
-  margin-top: 26px;
+  margin-top: 20px;
   width: 100%;
   background-color: #585D74;
   color: #FFF;
@@ -366,7 +366,7 @@ text-shadow: -4px 5px 3px rgba(0, 0, 0, 0.5);
 
 .register-rule {
   /*height: 355px;*/
-  margin-bottom: 43px;
+  margin-bottom: 1px;
   background-color: #ffffff;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -383,7 +383,7 @@ text-shadow: -4px 5px 3px rgba(0, 0, 0, 0.5);
 
 .register-rule-body {
   padding-left: 15px;
-  height: 223px;
+  height: 271px;
   margin-top: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
