@@ -262,7 +262,7 @@ border-color: #FAA770;
 }
 
 .login {
-  margin-bottom: 112px;
+  margin-bottom: 142px;
   background-color: #ffffff;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -331,7 +331,8 @@ border-color: #FAA770;
 .login-warning > .login-heading {
   color: #8a6d3b;
   background-color: #FFD479;
-border-color: #FAA770;}
+  border-color: #FAA770;
+}
 
 .login-warning > .login-heading + .login-collapse .login-body {
   border-color: #FAA770;
@@ -361,4 +362,113 @@ border-color: #FAA770;}
   padding: 15px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5) inset;
 text-shadow: -4px 5px 3px rgba(0, 0, 0, 0.5);
+}
+
+.register-rule {
+  /*height: 355px;*/
+  margin-bottom: 43px;
+  background-color: #ffffff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.19);
+  padding-right: 0px;
+  padding-left: 0px;
+  /*margin-top: 50px;*/
+}
+
+.register-rule button {
+  width: 100px;
+}
+
+.register-rule-body {
+  padding-left: 15px;
+  height: 223px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.register-rule-body:before,
+.register-rule-body:after {
+  display: table;
+  content: " ";
+}
+
+.register-rule-body:after {
+  clear: both;
+}
+
+.register-rule-body:before,
+.register-rule-body:after {
+  display: table;
+  content: " ";
+}
+
+.register-rule-body:after {
+  clear: both;
+}
+
+.register-rule-heading {
+  padding: 13px 20px;
+  border-bottom: 1px solid transparent;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  /*text-align: center;*/
+}
+
+.register-rule-heading > .dropdown .dropdown-toggle {
+  color: inherit;
+}
+
+.register-rule-title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 25px;
+  color: inherit;
+}
+
+.register-rule-title > a {
+  color: inherit;
+}
+
+.register-rule-warning {
+ border-color: #FAA770;
+}
+
+.register-rule-warning > .register-rule-heading {
+  color: #8a6d3b;
+  background-color: #FFD479;
+  border-color: #FAA770;
+}
+
+.register-rule-warning > .register-rule-heading + .register-rule-collapse .register-rule-body {
+  border-color: #FAA770;
+}
+
+.register-rule-warning > .register-rule-footer + .register-rule-collapse .register-rule-body {
+  border-color: #FAA770;
+}
+
+.register-rule-footer {
+  padding: 10px 15px;
+  background-color: #FFDD94;
+  border-top: 1px solid #FAA770;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: #8a6d3b;
+}
+
+.register {
+  width: 48%;
+  float: right;
+  margin-bottom: 0px;
+}
+
+.scrollable-y {
+  overflow-y: scroll;
+}
+
+.scrollable-x {
+  overflow-x: scroll;
 }

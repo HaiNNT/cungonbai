@@ -1,0 +1,284 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test Bootstrap</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <!--   <link rel="stylesheet" type="text/css" href="css/color.css"> -->
+  <link rel="stylesheet" type="text/css" href="css/mycss.css">
+  <link rel="icon" type="image/x-icon" href="image/logo.png">
+  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+  function clickCaret(){
+    if($(".user .dropdown-menu").hasClass("show")){
+      $(".user .dropdown-menu").removeClass("show");
+    }else{
+      $(".user .dropdown-menu").addClass("show");
+    }
+  }
+  </script>
+  <script type="text/javascript">
+  function checkValidUsername(username){
+    var regex = new RegExp("^[-\\w\\.\\$@\\*\\!]{3,30}$");
+    return regex.test(username);
+  }
+
+  function checkValidPassword(password){
+    var regex = new RegExp("^.{6,30}$");
+    return regex.test(password);
+  }
+
+  function checkValidEmail(email){
+    var regex = new RegExp("^.{6,30}$");
+    return regex.test(email);
+  }
+
+  function checkValidFullname(fullname){
+    var regex = new RegExp("^[-\\w\\.\\$@\\*\\!]{3,100}$");
+    return regex.test(fullname);
+  }
+
+  function checkValidRegister(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var fullname = document.getElementById("fullname").value;
+    var email = document.getElementById("email").value;
+    // var check = true;
+
+    if(!checkValidUsername(username)){
+      document.getElementById("invalid-username").classList.remove("hidden");
+      return false;
+    }else{
+      if(!document.getElementById("invalid-username").classList.contains("hidden")){
+        document.getElementById("invalid-username").classList.add("hidden");
+      }
+    }
+
+    if(!checkValidPassword(password)){
+      document.getElementById("invalid-password").classList.remove("hidden");
+      return false;
+    }else{
+      if(!document.getElementById("invalid-password").classList.contains("hidden")){
+        document.getElementById("invalid-password").classList.add("hidden");
+      }
+    }
+
+
+    if(!checkValidFullname(fullname)){
+      document.getElementById("invalid-fullname").classList.remove("hidden");
+      return false;
+    }else{
+      if(!document.getElementById("invalid-fullname").classList.contains("hidden")){
+        document.getElementById("invalid-fullname").classList.add("hidden");
+      }
+    }
+
+
+    if(!checkValidEmail(email)){
+      document.getElementById("invalid-email").classList.remove("hidden");
+      return false;
+    }else{
+      if(!document.getElementById("invalid-email").classList.contains("hidden")){
+        document.getElementById("invalid-email").classList.add("hidden");
+      }
+    }
+
+    return true;
+  }   
+  </script>
+</head>
+<body>
+ <header>
+  <div class="container">
+    <div class="row logo-user">
+     <div><a href="#"><img src="image/banner_600.png" class="logo"></a></div>
+     <div class="user">
+      <!-- <div>Welcome <a href="#" class="welcome">Guest</a></div> -->
+      <div class="dropdown" style="float: right"><label style="color: #8a6d3b;">Xin chào</label> 
+        <a href="#" class="welcome btn btn-warning btn-xs">Henry Thanh Hai</a>
+        <span onclick="clickCaret()" class="btn btn-warning btn-xs caret-click">
+          <b class="caret"></b>
+        </span>
+        <ul class="dropdown-menu hide" style="margin-left: 55px;">
+          <li><a href="#">Thông tin</a></li>
+          <li><a href="#">Tùy chỉnh</a></li>
+          <li><a href="#">Đổi mật khẩu</a></li>
+        </ul>
+      </div>
+      <div ="row">
+        <div class="reg-log">
+          <a href="#" class="btn btn-sm btn-login">Đăng Nhập</a>
+          <a href="#" class="btn btn-sm btn-register">Đăng Ký</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <nav class="navbar navbar-orange" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-home" href="#"><span class="glyphicon glyphicon-home"></span></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Giải Đề</a></li>
+          <li><a href="#">Hỏi Đáp</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Tài Nguyên <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Môn học</a></li>
+              <li><a href="#">Đề thi</a></li>
+              <li><a href="#">Bài kiểm tra</a></li>
+<!--           <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li> -->
+        </ul>
+
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Trợ Giúp <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Trợ Giúp</a></li>
+          <li><a href="#">Đề thi</a></li>
+          <li><a href="#">Bài kiểm tra</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Về Chúng Tôi</a></li>
+    </ul>
+    <!-- <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form> -->
+    <!-- <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Link</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </ul> -->
+  </div><!-- /.navbar-collapse -->
+</nav>
+</div>
+</div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="register-rule register-rule-warning col-xs-6">
+      <div class="register-rule-heading"><h3 class="register-rule-title">Điều Khoản</h3></div>
+      <div class="register-rule-body  scrollable-y">
+        <p>
+          sdasda asd ad aasda   asd   asdasdasdsadsd as d sadasdasd  sdasdsadas  sadasdasd asd
+          sadsadsad asdsadsad  sadasdasd asdsadsad asdasdasd sadasdsadasdasdsad sdasdsadsd asdsad asdasd 
+          asdasasd asdasd  asdasddsad  asdasdsadsad asdasdasdsad 
+        </p>
+        <p>
+          sdasda asd ad aasda   asd   asdasdasdsadsd as d sadasdasd  sdasdsadas  sadasdasd asd
+          sadsadsad asdsadsad  sadasdasd asdsadsad asdasdasd sadasdsadasdasdsad sdasdsadsd asdsad asdasd 
+          asdasasd asdasd  asdasddsad  asdasdsadsad asdasdasdsad 
+        </p>
+        <p>
+          sdasda asd ad aasda   asd   asdasdasdsadsd as d sadasdasd  sdasdsadas  sadasdasd asd
+          sadsadsad asdsadsad  sadasdasd asdsadsad asdasdasd sadasdsadasdasdsad sdasdsadsd asdsad asdasd 
+          asdasasd asdasd  asdasddsad  asdasdsadsad asdasdasdsad 
+        </p>
+        <p>
+          sdasda asd ad aasda   asd   asdasdasdsadsd as d sadasdasd  sdasdsadas  sadasdasd asd
+          sadsadsad asdsadsad  sadasdasd asdsadsad asdasdasd sadasdsadasdasdsad sdasdsadsd asdsad asdasd 
+          asdasasd asdasd  asdasddsad  asdasdsadsad asdasdasdsad 
+        </p>
+        <p>
+          sdasda asd ad aasda   asd   asdasdasdsadsd as d sadasdasd  sdasdsadas  sadasdasd asd
+          sadsadsad asdsadsad  sadasdasd asdsadsad asdasdasd sadasdsadasdasdsad sdasdsadsd asdsad asdasd 
+          asdasasd asdasd  asdasddsad  asdasdsadsad asdasdasdsad 
+        </p>
+      </div>
+      <div class="register-rule-footer">
+        <input type="checkbox" id="rule-check" /> Tôi đồng ý
+      </div>
+    </div>
+    <div class="login login-warning register">
+      <div class="login-heading"><h3 class="login-title">Đăng Ký</h3></div>
+      <div class="login-body">
+        <form class="form-horizontal" role="form" onsubmit="return checkValidRegister()">
+          <!-- <p class="invalid-mess text-center">Invalid information</p> -->
+          <div class="form-group">
+            <label class="col-md-3 control-label">Tên Đăng Nhập</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập">
+            </div>
+          </div>
+          <div class="col-md-offset-4">
+            <p class="invalid-mess hidden" id="invalid-username">Invalid username!</p>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Mật Khẩu</label>
+            <div class="col-md-9">
+              <input type="text" class="form-control" id="password" placeholder="Mật khẩu">
+            </div>
+          </div>
+          <div class="col-md-offset-4">
+            <p class="invalid-mess hidden" id="invalid-password">Invalid password!</p>
+          </div>
+          <div class="form-group">
+           <label class="col-md-3 control-label">Họ Tên</label>
+           <div class="col-md-9">
+            <input type="text" class="form-control" id="fullname" placeholder="Họ tên">
+          </div>
+        </div>
+        <div class="col-md-offset-4">
+          <p class="invalid-mess hidden" id="invalid-fullname">Invalid fullname!</p>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 control-label">Email</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" id="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="col-md-offset-4">
+          <p class="invalid-mess hidden" id="invalid-email">Invalid email!</p>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-7 col-md-2">
+            <input class="btn btn-warning" type="reset" value="Nhập Lại">
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-success">Đăng Ký</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="website-info text-center">
+      <h5>CungOnBai.com © 2014 - Website ôn thi hàng đầu Việt Nam</h5>
+      <h6>QwerTy Group</h6>
+    </div>
+    <div class="row"></div>
+  </div>
+</footer>
+
+</body>
+</html>
