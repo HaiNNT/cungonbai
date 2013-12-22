@@ -43,7 +43,15 @@
     var password = document.getElementById("password").value;
     var fullname = document.getElementById("fullname").value;
     var email = document.getElementById("email").value;
-    // var check = true;
+    var check = document.getElementById("rule-check").checked;
+    if(!check){
+      document.getElementById("non-check-rule").classList.remove("hidden");
+      return false;
+    }else{
+      if(!document.getElementById("non-check-rule").classList.contains("hidden")){
+        document.getElementById("non-check-rule").classList.add("hidden");
+      }
+    }
 
     if(!checkValidUsername(username)){
       document.getElementById("invalid-username").classList.remove("hidden");
@@ -82,6 +90,8 @@
         document.getElementById("invalid-email").classList.add("hidden");
       }
     }
+
+
 
     return true;
   }   
@@ -213,6 +223,7 @@
       </div>
       <div class="register-rule-footer">
         <input type="checkbox" id="rule-check" /> Tôi đồng ý
+        <span id="non-check-rule" class="invalid-mess hidden" style="margin-left: 50px;">Bạn phải đồng ý các điều khoản trước khi đăng ký</span>
       </div>
     </div>
     <div class="login login-warning register">
