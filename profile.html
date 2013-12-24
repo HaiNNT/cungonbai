@@ -1,0 +1,162 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test Bootstrap</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/mycss.css">
+  <link rel="icon" type="image/x-icon" href="image/logo.png">
+  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+  <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+</head>
+<body>
+ <header>
+  <div class="container">
+    <div class="row logo-user">
+     <div><a href="#"><img src="image/banner_600.png" class="logo"></a></div>
+     <div class="user">
+      <!-- <div>Welcome <a href="#" class="welcome">Guest</a></div> -->
+      <div class="dropdown" style="float: right"><label style="color: #8a6d3b;">Xin chào</label> 
+        <a href="#" class="welcome btn btn-warning btn-xs">Henry Thanh Hai</a>
+        <span onclick="clickCaret()" class="btn btn-warning btn-xs caret-click">
+          <b class="caret"></b>
+        </span>
+        <ul class="dropdown-menu hide" style="margin-left: 55px;">
+          <li><a href="#">Thông tin</a></li>
+          <li><a href="#">Tùy chỉnh</a></li>
+          <li><a href="#">Đổi mật khẩu</a></li>
+        </ul>
+      </div>
+      <div ="row">
+        <div class="reg-log">
+          <a href="#" class="btn btn-sm btn-login">Đăng Nhập</a>
+          <a href="#" class="btn btn-sm btn-register">Đăng Ký</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <nav class="navbar navbar-orange" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-home" href="#"><span class="glyphicon glyphicon-home"></span></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Giải Đề</a></li>
+          <li><a href="#">Hỏi Đáp</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Tài Nguyên <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Môn học</a></li>
+              <li><a href="#">Đề thi</a></li>
+              <li><a href="#">Bài kiểm tra</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Trợ Giúp <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Trợ Giúp</a></li>
+              <li><a href="#">Đề thi</a></li>
+              <li><a href="#">Bài kiểm tra</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Về Chúng Tôi</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+</header>
+
+<div class="container">
+	<div class="row">
+    <div class="user-profile-form login login-warning">
+      <div class="login-heading"><h3 class="login-title">Thông Tin Cá Nhân</h3></div>
+      <div class="login-body">
+        <div>
+          <label class="label label-success col-xs-offset-9">Sửa</label>
+          <div class="clearfix"></div>
+        <div class="col-xs-8 col-xs-offset-3"><label class="col-xs-4">Tên đăng nhập</label><p>hainnt</p></div>
+        <div class="clearfix"></div>
+        <div class="col-xs-8 col-xs-offset-3"><label class="col-xs-4">Họ tên</label><p>Nguyễn Ngọc Thanh Hải</p></div>
+        <div class="clearfix"></div>
+        <div class="col-xs-8 col-xs-offset-3"><label class="col-xs-4">Email</label><p>hainnt1302@gmail.com</p></div>
+        <div class="clearfix"></div>
+        </div>
+        <hr/>
+        <form class="form-horizontal col-xs-6 col-xs-offset-3" role="form" onsubmit="return checkValidLogin()">
+          <!-- <p class="invalid-mess text-center">Invalid username or password</p> -->
+          <div class="form-group">
+            <label class="col-xs-4 control-label">Mật khẩu</label>
+            <div class="col-xs-8">
+              <input type="text" class="form-control" id="password" placeholder="Mật khẩu">
+            </div>
+          </div>
+          <div class="col-xs-offset-6">
+            <p class="invalid-mess hidden" id="invalid-password">Invalid password!</p>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-4 control-label">Mật khẩu mới</label>
+            <div class="col-xs-8">
+              <input type="password" class="form-control" id="new-password" placeholder="Mật khẩu mới">
+            </div>
+          </div>
+          <div class="col-md-offset-6">
+            <p class="invalid-mess hidden" id="invalid-password">Invalid password!</p>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-4 control-label">Nhập lại</label>
+            <div class="col-xs-8">
+              <input type="password" class="form-control" id="confirm-new-password" placeholder="Nhập lại">
+            </div>
+          </div>
+          <div class="col-md-offset-6">
+            <p class="invalid-mess hidden" id="invalid-password">Mật khẩu nhập lại không đúng!</p>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-success col-xs-4 col-xs-offset-6">Đổi mật khẩu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="user-info-form login login-warning">
+      <div class="login-heading"><h3 class="login-title">Thông Tin Tài Khoản</h3></div>
+      <div class="login-body">
+        <div><label class="col-xs-7">Thứ hạng</label></div>
+        <div class="clear"></div>
+        <div><label class="col-xs-7">Điểm</label></div>
+        <div class="clear"></div>
+        <div><label class="col-xs-7">Cấp</label></div>
+        <div class="clear"></div>
+        <div><label class="col-xs-7">Phòng đã tạo</label></div>
+        <div class="clear"></div>
+        <div><label class="col-xs-7">Phòng tham gia</label></div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="website-info text-center">
+      <h5>CungOnBai.com © 2014 - Website ôn thi hàng đầu Việt Nam</h5>
+      <h6>QwerTy Group</h6>
+    </div>
+    <div class="row"></div>
+  </div>
+</footer>
+
+</body>
+</html>

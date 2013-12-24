@@ -2,6 +2,11 @@ body {
   background-color: #fcf8e3;
 }
 
+.test {
+  border: 1px solid red;
+  height: 300px;
+}
+
 .logo-user {
   height: 100px;
   border-radius: 6px;
@@ -35,6 +40,14 @@ body {
 
 .clear {
   clear: both;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }
 
 .welcome {
@@ -273,8 +286,8 @@ border-color: #FAA770;
   /*margin-top: 50px;*/
 }
 
-.login button {
-  width: 100px;
+.login-body button {
+  width: 120px;
 }
 
 .login-body {
@@ -471,4 +484,40 @@ text-shadow: -4px 5px 3px rgba(0, 0, 0, 0.5);
 
 .scrollable-x {
   overflow-x: scroll;
+}
+
+.search-form {
+  width: 25%;
+  float: left;
+}
+
+.chat-form {
+  width: 48%;
+  float: left;
+  margin-left: 1%;
+}
+
+.charts-form {
+  width: 25%;
+  float: right;
+}
+
+.room-row {
+  height: 100px;
+  margin-bottom: 5px;
+}
+
+.user-profile-form {
+width: 75%;
+float: left;
+margin-right: 1%;
+margin-top: 10px;
+margin-bottom: 0px;
+}
+
+.user-info-form {
+  width: 24%;
+  float: right;
+  margin-top: 10px;
+  margin-bottom: 130px;
 }
