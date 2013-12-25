@@ -2,6 +2,12 @@ body {
   background-color: #fcf8e3;
 }
 
+.banned-body {
+  background-image: url('../image/banned.jpg');
+  background-repeat:no-repeat;
+  background-position:top;
+}
+
 .test {
   border: 1px solid red;
   height: 300px;
@@ -486,20 +492,29 @@ text-shadow: -4px 5px 3px rgba(0, 0, 0, 0.5);
   overflow-x: scroll;
 }
 
-.search-form {
+.col-right-home {
   width: 25%;
-  float: left;
+  float: right;
 }
 
-.chat-form {
-  width: 48%;
+.col-left-home {
+  width: 74%;
   float: left;
+  margin-right: 1%;
+}
+
+.search-form {
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+
+.chat-form {
   margin-left: 1%;
+  margin-bottom: 10px;
 }
 
 .charts-form {
-  width: 25%;
-  float: right;
 }
 
 .room-row {
