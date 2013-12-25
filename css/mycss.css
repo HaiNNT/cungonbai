@@ -521,3 +521,8 @@ margin-bottom: 0px;
   margin-top: 10px;
   margin-bottom: 130px;
 }
+
+#edit-profile:hover {
+  cursor: pointer;
+  background-color: #50A050;
+}
